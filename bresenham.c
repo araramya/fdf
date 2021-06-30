@@ -1,6 +1,13 @@
 #include "include.h"
-#  define MOD(a) ((a<0) ? -a : a)
-void ft_bresenham_draw_line(float x1, float y1, float x2, float y2, t_info *info)
+#  define MOD(x) ((x<0) ? -x : x)
+void ft_swap(int *x, int *y)
+{
+    int *temp;
+    temp = x;
+    x = y;
+    y = temp;
+}
+void ft_bresenham_draw_line(int x1, int y1, int x2, int y2, t_info *info)
 {  
     int i;
     int dx;
@@ -55,4 +62,44 @@ void ft_bresenham_draw_line(float x1, float y1, float x2, float y2, t_info *info
              i++;
          }
     }
-}   
+
+
+
+//     int steep;
+//     int dx;
+//     int dy;
+//     int error;
+//     int ystep;
+
+
+
+//     steep = (MOD(y2 - y1) > MOD(x2 - x1));
+//     if(steep)
+//     {
+//         ft_swap(&x1,&y1);
+//         ft_swap(&x2, &y2);
+//     }
+//     if(x1 > x2)
+//     {
+//         ft_swap(&x1, &x2);
+//         ft_swap(&y1, &y2);
+//     }
+//     dx = x2 - x1;
+//     dy = MOD(y2 - y1);
+//     error = dx / 2;
+//     ystep = (y1 - y2) ? 1 : -1;
+//     int y = y1;
+//     for (int x = x1; x <= x2; x++)
+//     {
+//          mlx_pixel_put(info->mlx_ptr, info->mlx_win, x, y, 0xffffff);
+//          error -= dy;
+//          if(error < 0)
+//          {
+//              y += ystep;
+//              error += dx;
+//          }
+//     }
+
+
+
+ }   
