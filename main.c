@@ -11,7 +11,7 @@ int main(int argc, char **argv)
    // printf("hi\n");
     info->mlx_ptr = mlx_init();
     info->mlx_win = mlx_new_window(info->mlx_ptr, 1000, 1000, "FDF");
-    ft_bresenham_draw_line(10, 10, 500, 500, info);
+    ft_bresenham_draw_line(10, 900, 500, 500, info);
    // mlx_key_hook(info->mlx_win, deal_key, NULL)
     mlx_loop(info->mlx_ptr); 
     // i = 0;
