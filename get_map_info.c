@@ -53,11 +53,11 @@ void get_map_info(char* f_name,t_info *info)
 
     info->height = map_height(f_name); // count of lines
     info->width = map_width(f_name); // count of numbers in line
-    info->map_matrix = malloc(sizeof(int*) * (info->height + 1));
+    info->map_matrix = malloc(sizeof(int*) * (info->height));
     i = 0;
     while(i < info->height)
     {
-        info->map_matrix[i] = malloc(sizeof(int*) * (info->width + 1));
+        info->map_matrix[i] = malloc(sizeof(int*) * (info->width ));
         i++;
     }
     fd = open(f_name, O_RDONLY);
