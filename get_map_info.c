@@ -1,4 +1,5 @@
 #include "include.h"
+
 int map_height(char *f_name)
 {
     int i;
