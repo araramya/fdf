@@ -13,19 +13,19 @@ float ft_maxik(float x, float y)
 
  void ft_zoomik(float *x1, float *y1, float *x2, float *y2, t_info *info)
  {
-    info->coefficient = 40;
+    
     *x1 *= info->coefficient;
     *x2 *= info->coefficient;
     *y1 *= info->coefficient;
     *y2 *= info->coefficient;
  }
 
- void ft_shifting(float *x1, float *y1, float *x2, float *y2)
+ void ft_shifting(float *x1, float *y1, float *x2, float *y2, t_info *info)
  {
-    *x1+=400;
-    *x2+=400;
-    *y1+=400;
-    *y2+=400;
+    *x1+=info->move_x;
+    *x2+=info->move_x;
+    *y1+=info->move_y;
+    *y2+=info->move_y;
  }
 
  void ft_choose_color(int *z, t_info *info)
@@ -37,3 +37,11 @@ float ft_maxik(float x, float y)
     else
         info->color = 0x00000ff;
  }
+
+ void            my_mlx_pixel_put(t_img *data, int x, int y, int color)
+{
+	char    *dst;
+
+	dst = data->addr + (y * data->line_len + x * (data->bbp / 8));
+	*(unsigned int*)dst = color;
+}

@@ -6,13 +6,13 @@
 /*   By: araramya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/23 11:23:56 by araramya          #+#    #+#             */
-/*   Updated: 2021/01/23 11:47:42 by araramya         ###   ########.fr       */
+/*   Updated: 2021/07/06 04:39:44 by araramya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isascii(int c)
+int	ft_isascii(int c)
 {
 	return (c >= 0 && c <= 127);
 }

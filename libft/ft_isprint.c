@@ -6,13 +6,13 @@
 /*   By: araramya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/23 11:53:24 by araramya          #+#    #+#             */
-/*   Updated: 2021/01/27 17:30:35 by araramya         ###   ########.fr       */
+/*   Updated: 2021/07/06 04:41:04 by araramya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isprint(int c)
+int	ft_isprint(int c)
 {
 	return (c >= 32 && c <= 126);
 }
