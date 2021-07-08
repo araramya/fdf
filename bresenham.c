@@ -24,12 +24,12 @@
    
     while((int)(x2-x1) || (int)(y2- y1))
     { 
-        //mlx_pixel_put(info->mlx_ptr, info->mlx_win, x1, y1, info->color);
-          my_mlx_pixel_put(&info->image, x1, y1, info->color);
+        mlx_pixel_put(info->mlx_ptr, info->mlx_win, x1, y1, info->color);
+          //my_mlx_pixel_put(&info->image, x1, y1, info->color);
         x1 += dx;
         y1 += dy; 
     }
-       // mlx_put_image_to_window(info->mlx_ptr, info->mlx_win, info->image.img, 0, 0);
+        //mlx_put_image_to_window(info->mlx_ptr, info->mlx_win, info->image.img, 0, 0);
  }
 
 
@@ -47,7 +47,7 @@ void merge_lines(t_info *info)
             if(x < info->width - 1)
                 ft_bresenham_draw_line(x, y, x + 1, y, info);
             if(y < info->height - 1)
-                   ft_bresenham_draw_line(x, y, x, y + 1, info);
+                ft_bresenham_draw_line(x, y, x, y + 1, info);
             x++;
         }
         y++;

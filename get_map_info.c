@@ -13,7 +13,7 @@ int map_height(char *f_name)
         i++;
         free(line);
     }
-    close(fd);
+   close(fd);
     return (i);
 }
 

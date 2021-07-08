@@ -30,8 +30,8 @@
 #define k_RIGHT 124
 #define k_LEFT 123
 
-#define WIN_H 1000
-#define WIN_L 1000
+#define WIN_H 1920
+#define WIN_L 1080
 typedef struct s_img
 {
     void *img;
@@ -42,7 +42,7 @@ typedef struct s_img
 }              t_img;
 
 typedef struct s_info
-{   t_img image;
+{  // t_img image;
     void *mlx_ptr;
     void *mlx_win;
     int height;
