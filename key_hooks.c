@@ -5,22 +5,16 @@ int key_pressed(int key_code, t_info *info)
         exit(0);
     if (key_code == k_W)
         info->move_y -=15;
-    if (key_code == k_S)
+     if (key_code == k_S)
         info->move_y += 15;
-    if (key_code == k_D)
+     if (key_code == k_D)
         info->move_x += 15;
-    if (key_code == k_A)
+     if (key_code == k_A)
         info->move_x -= 15;
-    if (key_code == k_Z)
+     if (key_code == k_Z)
         info->coefficient += 5;
-    if (key_code == k_X)
+     if (key_code == k_X)
         info->coefficient -= 5;
-    //if ()
-    //ft_frame(info);
-  merge_lines(info);
-  mlx_clear_window(info->mlx_ptr, info->mlx_win);
-        // ft_clear(info);
-    // printf("%d\n", key_code);
+      //                                         mlx_pixel_put(info->mlx_ptr, info->mlx_win, info->move_x, info->move_y, info->color);
         return (0);
-
 }
