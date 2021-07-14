@@ -30,8 +30,8 @@
 #define k_RIGHT 124
 #define k_LEFT 123
 
-#define WIN_H 1000
-#define WIN_L 1000
+#define WIN_H 1080
+#define WIN_L 1920
 typedef struct s_img
 {
     void *img;

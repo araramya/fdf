@@ -22,11 +22,14 @@
     ft_choose_color(&z1, info);
      
    
-    while((int)(x2-x1) || (int)(y2- y1))
+    while(((int)(x2-x1) || (int)(y2- y1)))
     { 
     //                                               mlx_pixel_put(info->mlx_ptr, info->mlx_win, x1, y1, info->color);
-        
-        my_mlx_pixel_put(&info->image, x1, y1, info->color);
+        if((x1 >= 0 && x1 <= WIN_L) && ( y1 >= 0 && y1 <= WIN_H) )
+        { 
+            my_mlx_pixel_put(&info->image, x1, y1, info->color);
+            //printf("[%f, %f]\n", x1,y1);
+        }
         x1 += dx;
         y1 += dy; 
        // mlx_put_image_to_window(info->mlx_ptr, info->mlx_win, info->image.img, 0, 0);

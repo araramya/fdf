@@ -17,7 +17,7 @@ void	ft_clear(t_info *data) // paint all window BLACK
 int ft_frame(t_info *info)
 {
   ft_clear(info);
-           //    mlx_clear_window(info->mlx_ptr, info->mlx_win);
+               mlx_clear_window(info->mlx_ptr, info->mlx_win);
   merge_lines(info);
   mlx_put_image_to_window(info->mlx_ptr, info->mlx_win, info->image.img, 0, 0);
   mlx_do_sync(info->mlx_ptr);
@@ -33,8 +33,8 @@ int main(int argc, char **argv)
     info->coefficient = 20;
     get_map_info (argv[1],info);
     info->mlx_ptr = mlx_init();
-    info->mlx_win = mlx_new_window(info->mlx_ptr, WIN_H, WIN_L, "FDF");
-    info->image.img = mlx_new_image(info->mlx_ptr, WIN_H, WIN_L);
+    info->mlx_win = mlx_new_window(info->mlx_ptr, WIN_L, WIN_H, "FDF");
+    info->image.img = mlx_new_image(info->mlx_ptr, WIN_L, WIN_H);
     info->image.addr = mlx_get_data_addr(info->image.img, &info->image.bbp, &info->image.line_len, &info->image.endian);
    // mlx_key_hook(info->mlx_win, key_pressed, info);
     mlx_hook(info->mlx_win, 2, 0, key_pressed, info);
