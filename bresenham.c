@@ -10,23 +10,25 @@
 
     z1 = info->map_matrix[(int)y1][(int)x1];
     z2 = info->map_matrix[(int)y2][(int)x2];
+    info->color = info->map_colors[(int)y1][(int)x1];
+   // printf("%d\n", info->color);
     ft_zoomik(&x1,  &y1, &x2, &y2, info);
-    twoD_to_3D(&x1, &y1, z1);
-    twoD_to_3D(&x2, &y2, z2);
+    twoD_to_3D(&x1, &y1, z1, info);
+    twoD_to_3D(&x2, &y2, z2, info);
     dx = x2 - x1;
     dy = y2 - y1;
     ft_shifting(&x1, &y1, &x2, &y2, info);
     max = ft_maxik(fabs(dx), fabs(dy));
     dx /= max;
     dy /= max;
-    ft_choose_color(&z1, info);
+   // ft_choose_color(&z1, info);
      
    
     while(((int)(x2-x1) || (int)(y2- y1)))
     { 
     //                                               mlx_pixel_put(info->mlx_ptr, info->mlx_win, x1, y1, info->color);
         if( (y1 < WIN_H ) && (x1 < WIN_L ))
-        {  // printf("{%f,       %f}\n", x1, y1);
+        { //  printf("{%f,       %f}\n", x1, y1);
             if(x1 >= 0 && y1 >=0)
                  my_mlx_pixel_put(&info->image, x1, y1, info->color);
         }

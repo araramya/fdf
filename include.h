@@ -7,7 +7,7 @@
 # include <stdio.h>
 # include <math.h>
 
-#include "libft/libft.h"
+//#include "libft/libft.h"
 #include "minilibx_macos/mlx.h"
 
 #define k_esc 53 //close key
@@ -48,10 +48,12 @@ typedef struct s_info
     int height;
     int width;
     int **map_matrix;
+    int **map_colors;
     int coefficient;
     int color;
     int move_x;
     int move_y;
+    float rot_angle;
 
 }              t_info;
 
@@ -66,10 +68,14 @@ char		*ft_clearrem_gnl(char *rem_line);
 
 //libft_functions
 int	ft_word_count(char const *s, char c);
+int		ft_atoi_base(char *str, char *base);
+long	ft_atoi(const char *str);
+char		**ft_split(char const *s, char c);
+int	ft_strlen(const char *s);
 //fdf functions
 float ft_maxik(float x, float y);
 void get_map_info( char *f_name, t_info *info);
-void twoD_to_3D(float *x, float *y, int z);
+void twoD_to_3D(float *x, float *y, int z, t_info *info);
 //void ft_bresenham_draw_line(int x1, int y1, int x2, int y2, t_info *info);
 void ft_bresenham_draw_line(float x1, float y1, float x2, float y2, t_info *info);
 void ft_zoomik(float *x1, float *y1, float *x2, float *y2, t_info *info);

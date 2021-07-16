@@ -1,8 +1,5 @@
 #include "include.h"
-int		create_rgb(int r, int g, int b)
-{
-	return(r << 16 | g << 8 | b);
-}
+
 
 void	ft_clear(t_info *data) // paint all window BLACK
 {
@@ -10,28 +7,48 @@ void	ft_clear(t_info *data) // paint all window BLACK
 	{
 		for(int j = 0; j < WIN_L; j++)
 		{
-			my_mlx_pixel_put(&data->image, j, i, create_rgb(0, 0, 0));
+			my_mlx_pixel_put(&data->image, j, i, 0x000000);
 		}
 	}
 }
 int ft_frame(t_info *info)
 {
   ft_clear(info);
-               mlx_clear_window(info->mlx_ptr, info->mlx_win);
+               //mlx_clear_window(info->mlx_ptr, info->mlx_win);
   merge_lines(info);
   mlx_put_image_to_window(info->mlx_ptr, info->mlx_win, info->image.img, 0, 0);
   mlx_do_sync(info->mlx_ptr);
   return(1);
 }
+void ft_initizilation(t_info *info)
+{
+  info->coefficient = 20;
+    info->rot_angle = 0.8;
+    info->move_x = WIN_L/2;
+    info->move_y = WIN_H/2;
+}
 
 int main(int argc, char **argv)
 {
-    int x;
-    int y;
+
+    if(argc == 1 || argc > 2)
+    {
+        write(1,"ERROR!\n",7);
+        exit(0);
+    }
+    int fd;
+    fd = open(argv[1], O_RDONLY);
+    if(fd < 0)
+    {
+        write(1, "ERROR!\n",7);
+        exit(0);
+    }
+    else
+     close(fd);
     t_info *info;
     info = (t_info*)malloc(sizeof(t_info));
-    info->coefficient = 20;
     get_map_info (argv[1],info);
+    ft_initizilation(info);
     info->mlx_ptr = mlx_init();
     info->mlx_win = mlx_new_window(info->mlx_ptr, WIN_L, WIN_H, "FDF");
     info->image.img = mlx_new_image(info->mlx_ptr, WIN_L, WIN_H);

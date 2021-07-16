@@ -30,8 +30,8 @@ int map_width(char *f_name)
     free(line);
     return(i);
 }
-
-void get_matrix_info(int *int_line, char *line)
+//void get_matrix_colors(int *int_line, char *line)
+void get_matrix_info(int *int_line, int *color_line, char *line)
 {
     int i;
     i = 0;
@@ -40,6 +40,9 @@ void get_matrix_info(int *int_line, char *line)
     while(num_char[i])
     {
         int_line[i] = ft_atoi(num_char[i]);
+        color_line[i] = ft_atoi_base(num_char[i], "0123456789abcdef");
+       // printf("i--------%d, line_color--------%d, line_int--------------%d\n", i, color_line[i], int_line[i]);
+        //printf("i ===== %d, s=====%s\n", i, num_char[i]);
         i++;
     }
     free(num_char);
@@ -48,12 +51,19 @@ void get_matrix_info(int *int_line, char *line)
 void get_map_info(char* f_name,t_info *info)
 {
     int i;
-    int j;
+
     int fd;
     char *line;
 
     info->height = map_height(f_name); // count of lines
     info->width = map_width(f_name); // count of numbers in line
+    info->map_colors = malloc(sizeof(int*) * info->height);
+    i = 0;
+    while(i < info->height)
+    {
+        info->map_colors[i] = malloc(sizeof(int*) * (info->width));
+        i++;
+    }
     info->map_matrix = malloc(sizeof(int*) * (info->height));
     i = 0;
     while(i < info->height)
@@ -65,7 +75,7 @@ void get_map_info(char* f_name,t_info *info)
     i = 0;
     while(get_next_line(fd, &line))
     {
-        get_matrix_info(info->map_matrix[i], line);
+        get_matrix_info(info->map_matrix[i],info->map_colors[i], line);
         free(line);
         i++;
     }
