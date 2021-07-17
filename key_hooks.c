@@ -15,6 +15,16 @@ int	key_pressed(int key_code, t_info *info)
 {
 	if (key_code == K_ESC)
 	{
+		int i;
+		i = 0;
+		while(i < info->height)
+		{
+			free(info->map_matrix[i]);
+			free(info->map_colors[i]);
+			i++;
+		}
+		free(info->map_matrix);
+		free(info->map_colors);
 		exit(0);
 	}
 	if (key_code == K_W)
