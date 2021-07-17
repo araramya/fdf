@@ -6,16 +6,16 @@
 /*   By: araramya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/31 14:20:41 by araramya          #+#    #+#             */
-/*   Updated: 2021/02/02 16:42:04 by araramya         ###   ########.fr       */
+/*   Updated: 2021/07/17 04:51:05 by araramya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include.h"
 
- int	ft_word_count(char const *s, char c)
+int	ft_word_count(char const *s, char c)
 {
-	int i;
-	int count;
+	int	i;
+	int	count;
 
 	i = 0;
 	count = 0;
@@ -28,10 +28,10 @@
 	return (count);
 }
 
- int	ft_word_length(char const *s, char c)
+int	ft_word_length(char const *s, char c)
 {
-	int i;
-	int len;
+	int	i;
+	int	len;
 
 	i = 0;
 	len = 0;
@@ -43,11 +43,11 @@
 	return (len);
 }
 
- char	**f(char const *s, char c, char **result, int words_count)
+char	**f(char const *s, char c, char **result, int words_count)
 {
-	int i;
-	int j;
-	int w_len;
+	int	i;
+	int	j;
+	int	w_len;
 
 	while (*s == c)
 		s++;
@@ -72,7 +72,7 @@
 	return (result);
 }
 
-char		**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**result;
 	int		wcount;

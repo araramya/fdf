@@ -6,13 +6,13 @@
 /*   By: araramya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 14:55:54 by araramya          #+#    #+#             */
-/*   Updated: 2021/02/22 19:51:52 by araramya         ###   ########.fr       */
+/*   Updated: 2021/07/17 05:17:36 by araramya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include.h"
 
-int		ft_strlen_gnl(char *str)
+int	ft_strlen_gnl(char *str)
 {
 	int	i;
 
@@ -30,8 +30,8 @@ char	*ft_strjoin_gnl(char *rem_line, char *buffer)
 	int		j;
 	char	*str_join;
 
-	if (!(str_join = malloc((sizeof(char) *
-		(ft_strlen_gnl(rem_line) + ft_strlen_gnl(buffer))) + 1)))
+	if (!(str_join = malloc((sizeof(char)
+					* (ft_strlen_gnl(rem_line) + ft_strlen_gnl(buffer))) + 1)))
 		return (NULL);
 	i = 0;
 	j = 0;
@@ -47,9 +47,9 @@ char	*ft_strjoin_gnl(char *rem_line, char *buffer)
 	return (str_join);
 }
 
-int		ft_str_endline_gnl(char *str)
+int	ft_str_endline_gnl(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])

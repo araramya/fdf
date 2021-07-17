@@ -6,19 +6,20 @@
 /*   By: araramya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 14:29:47 by araramya          #+#    #+#             */
-/*   Updated: 2021/02/22 16:23:19 by araramya         ###   ########.fr       */
+/*   Updated: 2021/07/17 05:13:55 by araramya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include.h"
 
-int		get_next_line(int fd, char **line)
+int	get_next_line(int fd, char **line)
 {
-	int 			BUFFER_SIZE = 10;
-	char			*buffer;
-	int				readed;
-	static char		*rem_line;
+	int			BUFFER_SIZE;
+	char		*buffer;
+	int			readed;
+	static char	*rem_line;
 
+	BUFFER_SIZE = 10;
 	if (fd < 0 || BUFFER_SIZE <= 0 || line == NULL)
 		return (-1);
 	if (!(buffer = malloc((sizeof(char) * BUFFER_SIZE) + 1)))
@@ -39,13 +40,3 @@ int		get_next_line(int fd, char **line)
 		return (0);
 	return (1);
 }
-
-// int main()
-// {
-// 	char *line;
-// 	int fd;
-
-// 	fd = open("text.txt", O_RDONLY);
-// 	while(get_next_line(fd, &line))
-// 	printf("%s\n", line);
-// }
