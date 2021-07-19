@@ -12,6 +12,30 @@
 
 #include "include.h"
 
+void map_check(char *f_name)
+{
+	int w;
+	int w_new;
+	char *line;
+	int fd;
+
+	fd = open(f_name, O_RDONLY);
+	get_next_line(fd, &line);
+	w = ft_word_count(line, ' ');
+	free(line);
+	while(get_next_line(fd, &line))
+	{
+		w_new = ft_word_count(line, ' ');
+		if(w != w_new)
+		{
+			write(1, "ERROR!\n", 7);
+			exit (0);
+		}
+		free(line);
+	}
+	close(fd);
+}
+
 int	map_height(char *f_name)
 {
 	int		i;

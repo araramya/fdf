@@ -27,9 +27,9 @@ void	ft_bresenham_draw_line(float x1, float y1, float x2,
 	ft_zoomik(&x1, &y1, &x2, &y2, info);
 	twoD_to_3D(&x1, &y1, z1, info);
 	twoD_to_3D(&x2, &y2, z2, info);
+	ft_shifting(&x1, &y1, &x2, &y2, info);
 	dx = x2 - x1;
 	dy = y2 - y1;
-	ft_shifting(&x1, &y1, &x2, &y2, info);
 	max = ft_maxik(fabs(dx), fabs(dy));
 	dx /= max;
 	dy /= max;
