@@ -85,5 +85,4 @@ int			key_pressed(int key_code, t_info *info);
 void		ft_clear(t_info *data);
 int			ft_frame(t_info *info);
 void		my_mlx_pixel_put(t_img *data, int x, int y, int color);
-int			key_pressed_bonuses(int key_code, t_info *info);
 #endif

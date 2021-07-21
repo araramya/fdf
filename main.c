@@ -76,7 +76,6 @@ int	main(int argc, char **argv)
 	info->image.addr = mlx_get_data_addr(info->image.img, &info->image.bbp,
 			&info->image.line_len, &info->image.endian);
 	mlx_hook(info->mlx_win, 2, 0, key_pressed, info);
-	mlx_hook(info->mlx_win, 2, 0, key_pressed_bonuses, info);
 	mlx_loop_hook(info->mlx_ptr, ft_frame, info);
 	mlx_loop(info->mlx_ptr);
 }

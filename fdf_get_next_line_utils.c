@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include.h"
+#include "include.h" 
 
 int	ft_strlen_gnl(char *str)
 {
